@@ -1,0 +1,78 @@
+.radio-button {
+  input {
+    display: none;
+  }
+
+  label {
+    @include font(16px, 18px, 400);
+    @include color('black');
+    position: relative;
+    display: block;
+    padding-left: 30px;
+
+    &::before {
+      @include absolute(0, null, null, 0);
+      @include size(18px);
+      content: "";
+      background: transparentize(color('blue'), .8);
+      transform: scale(0);
+      transition: all .15s ease;
+      border-radius: 50%;
+    }
+  }
+
+  &__svg-icon {
+    @include absolute(0, null, null, 0);
+    @include size(19px, 19px);
+  }
+
+  &.is-lg &__svg-icon {
+    @include size(24px, 24px);
+  }
+
+  &.is-lg label {
+    line-height: 24px;
+  }
+
+  &.is-sm &__svg-icon {
+    @include size(16px, 16px);
+  }
+
+  &.is-sm label {
+    line-height: 16px;
+    font-size: 14px;
+    padding-left: 21px;
+  }
+
+  &.is-animating {
+    label {
+      &::before {
+        background: transparentize(color('blue'), .8);
+        animation: bounce .3s ease;
+        border-color: transparent;
+      }
+    }
+  }
+
+  &.is-disabled {
+    pointer-events: none;
+
+    label {
+      color: #BDBDBD;
+    }
+
+    circle {
+      fill: #BDBDBD;
+    }
+
+    path {
+      fill: #BDBDBD;
+    }
+  }
+
+  &.is-round-checkmark:hover:not(.is-checked) {
+    .radio-button__svg-icon circle {
+      stroke: #2158F5;
+    }
+  }
+}

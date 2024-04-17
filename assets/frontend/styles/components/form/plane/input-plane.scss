@@ -1,0 +1,147 @@
+.input-plane {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 40px;
+  border: 1px solid #B7B5B3;
+  border-radius: 4px;
+  cursor: text;
+
+  &:hover {
+    border-color: color('gray-darkest');
+  }
+
+  &.is-bold input {
+    font-weight: 700;
+  }
+
+  &.is-focused {
+    border-color: #2158F5 !important;
+  }
+
+  &.is-disabled {
+    border-color: #BDBDBD !important;
+    background-color: #E0E0E0 !important;
+    pointer-events: none;
+
+    input {
+      color: #828282 !important;
+    }
+
+    label {
+      color: #828282;
+      background-color:rgba(239, 239, 239, 0.3);
+    }
+  }
+
+  &.is-error {
+    border: 1px solid color('red') !important;
+
+    input {
+      color: color('red') !important;
+    }
+
+    &.error-color-yellow {
+      border: 1px solid #FDB81E !important;
+
+      input {
+        color: #FDB81E !important;
+      }
+    }
+  }
+
+  &.is-adornmented {
+    .adornment {
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      left: auto;
+      transform: translate(0%, -50%);
+      pointer-events: none;
+
+      &_cc {
+        right: 6px;
+        height: 19px;
+      }
+    }
+
+    input {
+      padding-right: 45px !important;
+    }
+  }
+
+  &.is-places {
+    input {
+      padding-right: 38px;
+    }
+
+    img {
+      @include size(24px);
+      @include absolute(7px, 7px);
+    }
+
+    .google-input {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+      visibility: hidden;
+    }
+  }
+
+  &.is-password {
+    .input-plane__toggle-pwd {
+      display: block;
+      width: 21px;
+      height: 12px;
+      position: absolute;
+      top: calc(50% - 6px);
+      right: 10px;
+      opacity: .2;
+
+      @at-root body[dir="rtl"] & {
+        right: auto;
+        left: 10px;
+      }
+    }
+
+    &.is-password-visible {
+      .input-plane__toggle-pwd {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__top-label {
+    @include font(14px, 20px, 400);
+    @include color('black');
+    display: block;
+    padding-bottom: 5px;
+  }
+
+  label {
+    @include font(14px, 38px, 400);
+    @include color('gray-darkest');
+    @include bgc('white');
+    border-radius: 4px;
+    padding-left: 12px;
+    white-space: nowrap;
+    cursor: text;
+  }
+
+  input {
+    @include font(14px, 20px, 400);
+    @include color('black');
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+    padding: 0 14px;
+    outline: none;
+    min-width: 0;
+    border-radius: 4px;
+  }
+}

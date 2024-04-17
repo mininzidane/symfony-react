@@ -1,0 +1,102 @@
+.content-box {
+  padding: 40px 20px 60px;
+  background: #F1F1F1;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
+  margin: 50px auto 54px;
+  max-width: 1140px;
+}
+.content-box.md {
+  max-width: 770px;
+}
+.content-box.white-with-border {
+  background: transparent;
+  border: 1px solid #CED0D1;
+  box-shadow: none;
+}
+.content-box.white-with-border .content-box-subtitle {
+  color: #000000;
+}
+@media (max-width: 768px) {
+  .content-box {
+    border-radius: 0;
+    margin: 0 !important;
+    padding-bottom: 40px;
+  }
+}
+.content-box .content-box-title {
+  text-align: center;
+  color: #000000;
+  font-size: 28px;
+  line-height: 37px;
+  font-weight: 300;
+  padding: 15px 0 0;
+  margin: 0 auto 50px;
+  max-width: 480px;
+}
+.content-box .content-box-title.with-subtitle {
+  margin-bottom: 15px;
+}
+@media (max-width: 768px) {
+  .content-box .content-box-title {
+    max-width: 100%;
+    padding: 0;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 480px) {
+  .content-box .content-box-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+.content-box .content-box-subtitle {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 300;
+  text-align: center;
+  margin: 10px auto 40px;
+  max-width: 640px;
+  color: #000000;
+}
+@media (max-width: 992px) {
+  .content-box .content-box-subtitle {
+    margin: 5px auto 40px !important;
+  }
+}
+@media (max-width: 768px) {
+  .content-box .content-box-subtitle {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 12px auto 40px !important;
+  }
+}
+.content-box .content-box-subtitle.wide {
+  max-width: 100%;
+}
+.content-box .content-box-subtitle a {
+  color: #2158F5;
+  font-weight: 400;
+}
+.content-box .sub-button-warning {
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 768px) {
+  .content-box .sub-button-warning {
+    font-size: 14px;
+  }
+}
+.content-box .centerer {
+  max-width: 470px;
+  margin: 0 auto;
+  width: 100%;
+}
+.content-box .centerer.wide {
+  max-width: 450px;
+}

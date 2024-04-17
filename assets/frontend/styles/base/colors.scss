@@ -1,0 +1,65 @@
+// prettier-ignore
+$colors-palette: ( // Grayscale
+  'transparent': rgba(0, 0, 0, 0),
+  'black': #000000,
+  'gray-darkest': #4B5158,
+  'gray-dark': #8D8D8D,
+  'gray': #C2C2C2,
+  'cloud': #F8F8F8,
+  'white': #FFFFFF,
+
+  // Сhromatic
+  'orange': #F06B00,
+  'brown': #BD5B00,
+  'brown-dark': #A45007,
+  'brown-light': #E3A26A,
+  'vanilla': #FFF5CE,
+  'blue': #2158F5,
+  'blue-dark': #06435E,
+  'blue-light': #BFCCD2,
+  'haze': #F1F1F8,
+  'ghost': #F8F8FC,
+  'red': #8C0C0C,
+  'red-dark': #740000,
+  'green': #0C5D00,
+  'green-light': #009100,
+  'silver': #AEB0B5,
+);
+
+// Color utility classes
+@each $name,
+$value in $colors-palette {
+  .bgc-#{$name} {
+    background-color: $value !important;
+  }
+}
+
+@each $name,
+$value in $colors-palette {
+  .c-#{$name} {
+    color: $value !important;
+  }
+}
+
+// Color related functions & mixins
+@function color($color, $transparency: false) {
+  @if $transparency {
+    @return rgba(map-get($colors-palette, $color), $transparency);
+  }
+
+  @else {
+    @return map-get($colors-palette, $color);
+  }
+}
+
+@mixin color($color, $transparency: false) {
+  color: color("#{$color}", $transparency);
+}
+
+@mixin bgc($color, $transparency: false) {
+  background-color: color("#{$color}", $transparency);
+}
+
+@mixin fill($color) {
+  fill: map-get($colors-palette, $color);
+}

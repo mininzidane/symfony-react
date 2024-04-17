@@ -1,0 +1,65 @@
+.bid-information {
+  &__won-card {
+    position: relative;
+    padding: 22px 30px 30px;
+    background-color: #FFEFAF;
+    margin-top: 0;
+
+    @include breakpoint($sm) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &__won-card-icon {
+    @include absolute(-25px, 50%);
+    margin-right: -25px;
+  }
+
+  &__won-card-title {
+    @include font(16px, 20px, 700);
+    padding-top: 10px;
+    text-align: center;
+    color: #4A9029;
+
+    br {
+      display: none;
+
+      @include breakpoint($sm) {
+        display: block;
+      }
+    }
+  }
+
+  &__won-card-section {
+    background-color: #FFF8DF;
+    padding: 25px;
+    margin-top: 3px;
+
+    @include breakpoint($sm) {
+      padding: 20px;
+    }
+
+    &:first-child {
+      margin-top: 28px;
+    }
+  }
+
+  &__won-card-content {
+    margin-top: 10px;
+  }
+
+  &__won-card-social {
+    @include flex(center);
+    margin-top: 25px;
+
+    a:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &__won-card-cta {
+    @include flex(center);
+    margin-top: 28px;
+  }
+}

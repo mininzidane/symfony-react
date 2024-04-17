@@ -1,0 +1,47 @@
+$opacity_max: 100;
+$opacity_step: 5;
+@for $i from 1 through ceil(($opacity_max + $opacity_step)/$opacity_step) {
+  $value: ($i - 1) * $opacity_step;
+  .op-#{$value} { opacity: $value / 100 !important; }
+  .h\:op-#{$value}:hover { opacity: $value / 100 !important; }
+}
+
+.ov-h { overflow: hidden !important; }
+.ov-v { overflow: visible !important; }
+
+.cur-d { cursor: default !important }
+.cur-m { cursor: move !important }
+.cur-p { cursor: pointer !important }
+
+.pe-n  { pointer-events: none !important }
+.pe-a  { pointer-events: all !important }
+.ol-n { outline: none !important; }
+
+.trf-scx  { transform: scaleX(-1) !important; }
+.trf-scy  { transform: scaleY(-1) !important; }
+.trf-scxy { transform: scaleX(-1) scaleY(-1) !important; }
+
+.bs-n { box-shadow: none !important; }
+.fltr-grcl { filter: grayscale(100%) !important; }
+.e\:d-n:empty { display: none !important; }
+.has-extra-hitbox::after { content: ""; position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; }
+.scrollbar { @include scrollbar; }
+
+$bdrs-map: (
+  "50": 50%,
+  xl: 9999px,
+  lg: 8px,
+  md: 4px,
+  sm: 2px,
+  "0": 0,
+);
+
+@each $bdrs-name, $bdrs-value in $bdrs-map {
+  .bdrs-#{$bdrs-name} {
+    border-radius: $bdrs-value !important;
+  }
+}
+
+@mixin bdrs($bdrs-name) {
+  border-radius: map-get($bdrs-map, $bdrs-name) !important;
+}

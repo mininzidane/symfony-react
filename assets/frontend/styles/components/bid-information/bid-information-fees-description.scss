@@ -1,0 +1,87 @@
+.bid-information {
+  &__fees-description-caption {
+    @include flex(space-between);
+    padding: 0 14px;
+
+    @include breakpoint($xxs) {
+      padding: 0;
+    }
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  &__fees-description-row {
+    @include flex(space-between);
+    padding: 8px 14px 0 14px;
+
+    @include breakpoint($xxs) {
+      padding: 8px 0 0 20px;
+    }
+
+    &.is-small {
+      font-size: 12px;
+    }
+
+    &.is-caption>div:first-child {
+      position: relative;
+
+      &::after {
+        content: "";
+        @include size(0);
+        display: inline-block;
+        border-style: solid;
+        border-width: 4px 4px 0 4px;
+        border-color: #2158F5 transparent transparent transparent;
+        position: relative;
+        left: 4px;
+        top: -1px;
+      }
+
+      &.is-flipped::after {
+        transform: scaleY(-1);
+      }
+    }
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  &__show-hide-fees-button {
+    &::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: calc(100% + 16px);
+      height: calc(100% + 10px);
+    }
+  }
+
+  &__fees-description-total {
+    @include flex(space-between);
+    padding: 12px 14px;
+    border-radius: 4px;
+    color: #333333;
+    background-color: rgba(224, 224, 224, .4);
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+
+    @include breakpoint($xxs) {
+      padding: 10px 0;
+      background-color: transparent;
+    }
+  }
+
+  &__fees-description-total-price {
+    white-space: nowrap;
+
+    span {
+      font-weight: 300;
+    }
+  }
+}

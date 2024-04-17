@@ -1,0 +1,17 @@
+// Font mixin
+$segoelight: 'Segoe UI', 'segoelight', 300, normal;
+$segoeregular: 'Segoe UI', 'segoeregular', 400, normal;
+$segoebold: 'Segoe UI', 'segoebold', 700, normal;
+$segoeitalic: 'Segoe UI', 'segoeitalic', 400, italic;
+
+$fonts: $segoelight, $segoeregular, $segoebold, $segoeitalic;
+
+@each $family, $typeface, $weight, $style in $fonts {
+  @font-face {
+    font-family: "#{$family}";
+    src: url('/fonts/#{$typeface}.woff2') format('woff2'), url('/fonts/#{$typeface}.woff') format('woff'), url('/fonts/#{$typeface}.eot') format('embedded-opentype'), url('/fonts/#{$typeface}.ttf') format('truetype'), url('/fonts/#{$typeface}.svg##{$typeface}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: block;
+  }
+}

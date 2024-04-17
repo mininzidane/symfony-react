@@ -1,0 +1,88 @@
+$rootClass: "tickbox";
+
+.#{$rootClass} {
+  position: relative;
+
+  @keyframes click-wave {
+    from {
+      background-color: rgba(13, 93, 184, 0.1);
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      background-color: rgba(13, 93, 184, 0.1);
+      transform: translate(-50%, -50%) scale(3);
+    }
+  }
+
+  &:hover input:not(:checked) ~ .#{$rootClass}__icon::before {
+    opacity: 1;
+  }
+
+  & input:checked ~ .#{$rootClass}__icon::after {
+    animation: click-wave 0.15s;
+  }
+
+  &.is-small label {
+    font-size: 14px;
+  }
+
+  label {
+    display: block;
+    padding-left: 30px;
+    @include font(16px, 20px, 400);
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &.is-disabled {
+    & input:checked ~ .#{$rootClass}__icon::after {
+      animation: none;
+    }
+    & label {
+      cursor: default;
+    }
+  }
+
+  &__icon {
+    @include absolute(1px, null, null, 0);
+    @include size(18px);
+    pointer-events: none;
+    z-index: 1;
+
+    &::before,
+    &::after {
+      content: "";
+      border-radius: 50%;
+    }
+
+    &::before {
+      @include bgc("blue", 0.05);
+      @include absolute(-6px, -6px);
+      @include size(30px);
+      transition: opacity 0.15s ease;
+      opacity: 0;
+
+      @include breakpoint($sm) {
+        display: none;
+      }
+    }
+
+    &::after {
+      @include size(13px);
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      will-change: transform;
+    }
+
+    img {
+      @include absolute(0, 0);
+      display: block;
+    }
+  }
+
+  + .text-error {
+    margin-top: 5px;
+  }
+}

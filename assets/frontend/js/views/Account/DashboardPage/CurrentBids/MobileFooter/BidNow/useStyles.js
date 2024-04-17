@@ -1,0 +1,14 @@
+import { makeStyles } from '@material-ui/core/styles';
+
+export default makeStyles(({ mixins }) => ({
+  root: {
+    ...mixins.font(14, 20, 400),
+    color: '#333',
+    borderTop: '1px solid #F1F1F8',
+    width: '100%',
+    padding: [[8, 10]],
+    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+}));

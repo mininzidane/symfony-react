@@ -1,0 +1,64 @@
+.iti {
+    width: 100%;
+    direction: ltr;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.iti__selected-flag {
+    background-color: #fff !important;
+    outline: none;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, .5) !important;
+    }
+}
+
+.iti--separate-dial-code {
+    display: flex;
+}
+
+.iti__flag-container {
+    position: absolute;
+}
+
+.iti__country-list {
+    max-height: 300px;
+    min-width: 200px;
+    border: 2px solid #0071bc;
+    border-radius: 4px;
+
+    @include breakpoint($sm-up) {
+        width: calc(100% + 2px) !important;
+    }
+
+    @include scrollbar(#aaa, 6px);
+    left: 0;
+
+    &::-webkit-scrollbar-thumb {
+        min-height: 40px;
+    }
+}
+
+.iti__country.iti__highlight {
+    background-color: #C8E5FB;
+}
+
+.iti__flag.iti__by {
+    height: 15px;
+}
+
+.iti__flag {
+    background-image: url("../../images/sprite/flags.png");
+
+    @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+        background-image: url("../../images/sprite/flags@2x.png");
+    }
+}
+
+.iti-mobile .iti--container {
+    width: auto;
+    height: auto;
+    z-index: 9999999999;
+}

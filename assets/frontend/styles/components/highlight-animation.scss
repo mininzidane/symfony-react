@@ -1,0 +1,14 @@
+.highlight-animation {
+  outline: 8px solid transparent;
+  animation: pulse 2s 2;
+  border-radius: 0 !important;
+}
+
+@keyframes pulse {
+  0% {
+    outline-color: #FFF;
+  }
+  100% {
+    outline-color: #2158F5;
+  }
+}

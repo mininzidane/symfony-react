@@ -1,0 +1,18 @@
+.bid-information {
+  &__upload-id-description {
+    @include flex(space-between);
+    padding-top: 0;
+    padding-bottom: 20px;
+
+    img {
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    div {
+      @include font(14px, 19px, 400);
+      padding-left: 14px;
+      color: #8d8d8d;
+    }
+  }
+}

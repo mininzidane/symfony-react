@@ -1,0 +1,65 @@
+.iti {
+  width: 100%;
+  direction: ltr;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.iti__selected-flag {
+  outline: none;
+}
+
+.iti--separate-dial-code {
+  display: flex;
+
+  & > input:not(.ng-input) {
+    padding-left: 8px !important;
+  }
+}
+
+.iti__flag-container {
+  position: static;
+}
+
+.iti__country-list {
+  max-height: 300px;
+  border: 2px solid #2158F5;
+  border-radius: 4px;
+  z-index: 4001;
+
+  @include breakpoint($sm-up) {
+    width: calc(100% + 2px) !important;
+  }
+}
+
+.iti__country.iti__highlight {
+  background-color: #C8E5FB;
+}
+
+.iti__flag.iti__by {
+  height: 15px;
+}
+
+.iti__flag {
+  background-image: url("../../../images/sprite/flags.png");
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    background-image: url("../../../images/sprite/flags@2x.png");
+  }
+}
+
+.iti__country-list {
+  @include scrollbar(#aaa, 6px);
+  left: 0px;
+
+  &::-webkit-scrollbar-thumb {
+    min-height: 40px;
+  }
+}
+
+.iti-mobile .iti--container {
+  width: auto;
+  height: auto;
+  z-index: 9999999999;
+}

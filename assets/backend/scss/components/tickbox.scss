@@ -1,0 +1,58 @@
+$rootClass: "tickbox";
+
+.#{$rootClass} {
+  position: relative;
+
+  &:hover .#{$rootClass}__icon::before {
+    opacity: 1;
+  }
+
+  &.is-active .#{$rootClass}__icon::after {
+    opacity: 1;
+  }
+
+  &.is-small label {
+    font-size: 14px;
+  }
+
+  label {
+    display: block;
+    padding-left: 25px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      transition: opacity 0.15s ease;
+      opacity: 0;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      //@include absolute(0, 0);
+      display: block;
+    }
+  }
+
+  + .text-error {
+    margin-top: 5px;
+  }
+}

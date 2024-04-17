@@ -1,0 +1,26 @@
+.card-content__container {
+  margin-left: 14px;
+  margin-right: 14px;
+  color: #333;
+}
+
+.bid-information {
+  &__container {
+    margin-top: 32px;
+    color: #333;
+
+    &.has-timer {
+      margin-top: 20px;
+    }
+
+    &.is-lot-page-v2 {
+      margin-top: 12px;
+    }
+
+    &.is-spinner-container {
+      position: relative;
+      min-height: 300px;
+    }
+  }
+
+}

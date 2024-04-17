@@ -1,0 +1,45 @@
+.textarea-plane {
+  position: relative;
+  width: 100%;
+  border: 1px solid #B7B5B3;
+  border-radius: 4px;
+  background-color: color('white');
+
+  &:hover {
+    border-color: color('gray-darkest');
+  }
+
+  &.is-focused {
+    border-color: #2158F5
+  }
+
+  &.is-bold textarea {
+    font-weight: 700;
+  }
+
+  &.is-error {
+    border-color: color('red') !important;
+    textarea {
+      color: color('red') !important;
+    }
+  }
+
+  textarea {
+    @include font(14px, 20px, 400);
+    @include color('black');
+    @include scrollbar;
+    border: none;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    padding: 9px 10px 11px 11px;
+    outline: none;
+    resize: none;
+
+    &::placeholder {
+      font-weight: 400;
+      color: #828282;
+    }
+  }
+}

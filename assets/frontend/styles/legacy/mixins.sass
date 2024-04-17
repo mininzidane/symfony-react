@@ -1,0 +1,30 @@
+=abs($arguments...)
+  +absolute($arguments...)
+
+=fix($arguments...)
+  +fixed($arguments...)
+
+=content-image-container
+  display: block
+  height: 0
+  padding-bottom: 75%
+  position: relative
+  background-position: center
+
+  img
+    +abs(0, 0)
+    +bgimage('image_na', 'jpg')
+    background-size: cover
+    +size(100%)
+
+=reset
+  padding: 0
+  margin: 0
+
+=bgimage($image, $ext: 'png')
+  background-image: url(../img/backgrounds/#{$image}.#{$ext})
+
+=flex-center
+  display: flex
+  align-items: center
+  justify-content: center

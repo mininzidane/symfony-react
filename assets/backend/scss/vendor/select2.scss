@@ -1,0 +1,7 @@
+@import "~select2/dist/css/select2.css";
+
+.select2 {
+  span[title] {
+    border-bottom: 0 !important;
+  }
+}

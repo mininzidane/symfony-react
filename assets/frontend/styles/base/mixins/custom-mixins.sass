@@ -1,0 +1,88 @@
+// Custom mixins
+=placeholder
+  \::-webkit-input-placeholder
+    @content
+  \:-moz-placeholder
+    @content
+  \::-moz-placeholder
+    @content
+  \:-ms-input-placeholder
+    @content
+
+=after
+  &:after
+    content: ''
+    @content
+
+=before
+  &:before
+    content: ''
+    @content
+
+=ellipsis
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
+
+=onhover
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+=unhover
+  text-decoration: underline !important
+
+  &:hover
+    text-decoration: none !important
+
+=border($thickness, $color, $style: 'solid')
+  border: $thickness #{$style} color('#{$color}')
+
+=font($size, $lh: false, $wieght: false, $style: false)
+  @if $size
+    font-size: $size
+  @if $lh
+    line-height: $lh
+  @if $wieght
+    font-weight: $wieght
+  @if $style
+    font-style: $style
+
+=fontSegoe
+  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif !important
+
+=flex($jc: false, $ai: false, $fw: false, $fd: false)
+  display: flex
+  @if $jc
+    justify-content: $jc
+  @if $ai
+    align-items: $ai
+  @if $fw
+    flex-wrap: $fw
+  @if $fd
+    flex-direction: $fd
+
+=scrollbar($color: #d1d1d1, $width: 4px)
+  overflow-y: scroll
+  overflow-x: hidden
+  scrollbar-color: $color transparent
+  scrollbar-width: thin
+
+  &::-webkit-scrollbar
+    width: $width
+
+  &::-webkit-scrollbar-thumb
+    background-color: $color
+    border-radius: $width
+
+=transition($prop: all, $time: 0.2s, $easing: ease)
+  transition: $prop $time $easing
+
+=extra-hitbox($size: 10px)
+  cursor: pointer
+  position: relative
+  user-select: none
+  +after
+    +absolute(-1 * $size, -1 * $size, -1 * $size, -1 * $size)
+

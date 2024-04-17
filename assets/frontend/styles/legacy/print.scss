@@ -1,0 +1,28 @@
+
+
+@media print {
+  * {
+    background: none !important;
+  }
+
+  .page-header, .page-footer {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .page-content > .container {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .notification > .wrap {
+    padding: 0 0 25px 0 !important;
+  }
+  .notification > .wrap::before {
+    content: "";
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+.bank-feed-tabs {
+  width: 100%;
+  border-bottom: 1px solid $dark-gray;
+  padding: 0;
+
+  &__item {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    list-style: none;
+    padding: 10px 0;
+    margin-right: 15px;
+
+    &-link {
+      display: block;
+      color: $text-color;
+    }
+
+    &-active,
+    &:hover {
+      border-bottom: 2px solid $navy;
+
+      &__item-link {
+        color: $navy;
+      }
+    }
+  }
+}
+
+#bank-feed [data-sort-field] .fa {
+  float: right;
+  margin-top: 2px;
+}

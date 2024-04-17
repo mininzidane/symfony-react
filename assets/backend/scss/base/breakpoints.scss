@@ -1,0 +1,26 @@
+$breakpoints-map: (
+        lg: 1200px,
+        md: 992px,
+        sm: 768px,
+        xs: 480px
+);
+
+// Because it is used pretty rarely keep it outside of map
+// to prevent bloating of useless utility classes
+$breakpoint-xxs: 374px;
+
+$lg: max-width map-get($breakpoints-map, lg);
+$md: max-width map-get($breakpoints-map, md);
+$sm: max-width map-get($breakpoints-map, sm);
+$xs: max-width map-get($breakpoints-map, xs);
+$xxs: max-width $breakpoint-xxs;
+
+$lg-up: min-width (map-get($breakpoints-map, lg) + 1px);
+$md-up: min-width (map-get($breakpoints-map, md) + 1px);
+$sm-up: min-width (map-get($breakpoints-map, sm) + 1px);
+$xs-up: min-width (map-get($breakpoints-map, xs) + 1px);
+$xxs-up: min-width $breakpoint-xxs + 1px;
+
+$lg-only: map-get($breakpoints-map, md) + 1px map-get($breakpoints-map, lg);
+$md-only: map-get($breakpoints-map, sm) + 1px map-get($breakpoints-map, md);
+$sm-only: map-get($breakpoints-map, xs) + 1px map-get($breakpoints-map, sm);

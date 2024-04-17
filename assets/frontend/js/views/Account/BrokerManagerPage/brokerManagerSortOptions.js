@@ -1,0 +1,18 @@
+export default [
+  { field: 'sign_up', order: 'desc' },
+  { field: 'sign_up', order: 'asc' },
+  { field: 'full_name', order: 'asc' },
+  { field: 'full_name', order: 'desc' },
+  { field: 'phone_number', order: 'asc' },
+  { field: 'phone_number', order: 'desc' },
+  { field: 'email', order: 'asc' },
+  { field: 'email', order: 'desc' },
+  { field: 'bl_amount', order: 'asc' },
+  { field: 'bl_amount', order: 'desc' },
+  { field: 'current_bids', order: 'asc' },
+  { field: 'current_bids', order: 'desc' },
+  { field: 'won_bids', order: 'asc' },
+  { field: 'won_bids', order: 'desc' },
+  { field: 'status', order: 'asc' },
+  { field: 'status', order: 'desc' },
+];

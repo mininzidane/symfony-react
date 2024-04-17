@@ -1,0 +1,83 @@
+.input-hollow {
+  position: relative;
+  width: 100%;
+}
+.input-hollow.is-error input {
+  border-color: #981B1E !important;
+}
+.input-hollow label {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #4B5158;
+  pointer-events: none;
+}
+.input-hollow input {
+  display: block;
+  height: 40px;
+  width: 100%;
+  padding-right: 14px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #000000;
+  border-radius: 2px;
+  border: 1px solid #B7B5B3;
+  outline: none;
+}
+.input-hollow input:focus {
+  border-color: #F06B00;
+}
+
+.textarea-hollow {
+  position: relative;
+  width: 100%;
+}
+.textarea-hollow.is-error textarea {
+  border-color: #981B1E !important;
+}
+.textarea-hollow textarea {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  padding: 9px 10px 11px 11px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #000000;
+  border-radius: 2px;
+  border: 1px solid #B7B5B3;
+  outline: none;
+  resize: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-color: #d1d1d1 transparent;
+  scrollbar-width: thin;
+}
+.textarea-hollow textarea::-webkit-scrollbar {
+  width: 4px;
+}
+.textarea-hollow textarea::-webkit-scrollbar-thumb {
+  background-color: #d1d1d1;
+  min-height: 40px;
+  border-radius: 4px;
+}
+.textarea-hollow textarea:focus {
+  border-color: #F06B00;
+}
+.textarea-hollow ::placeholder {
+  color: #4B5158;
+}
+
+.form-hint-hollow {
+  margin-top: 3px;
+  padding-bottom: 4px;
+  color: #981B1E;
+  font-size: 12px;
+  line-height: 18px;
+}

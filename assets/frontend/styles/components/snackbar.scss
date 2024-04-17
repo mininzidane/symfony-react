@@ -1,0 +1,63 @@
+.snackbars-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  z-index: 4001;
+}
+
+.snackbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 380px;
+  max-width: calc(100vw - 30px);
+  padding: 17px 22px;
+  border-radius: 4px;
+  background: #4A4A4A;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+  transform: translateY(10px);
+  will-change: transform;
+  pointer-events: none;
+  user-select: none;
+}
+@media (max-width: 992px) {
+  .snackbar.is-swiped-left {
+    transform: translate(calc(-50% - 50vw - 10px), calc(-100% - 20px)) !important;
+  }
+  .snackbar.is-swiped-right {
+    transform: translate(calc(50% + 50vw + 10px), calc(-100% - 20px)) !important;
+  }
+}
+.snackbar.is-shown {
+  pointer-events: all;
+  transform: translateY(calc(-100% - 25px));
+}
+@media (max-width: 768px) {
+  .snackbar.is-shown {
+    transform: translateY(calc(-100% - 20px));
+  }
+}
+.snackbar.is-opaque .snackbar__message, .snackbar.is-opaque .snackbar__link {
+  opacity: 1;
+}
+.snackbar__message, .snackbar__link {
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+  will-change: opacity;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
+}
+.snackbar__link {
+  padding-left: 15px;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  color: #65BFFF;
+}
+.snackbar__link:hover {
+  color: #a2d8ff;
+}

@@ -1,0 +1,28 @@
+@import "breakpoints";
+@import "variables";
+@import "mixins";
+@import "print";
+@import "typography";
+@import "../../../frontend/styles/base/colors";
+@import "../../../frontend/styles/base/layout";
+@import "../../../frontend/styles/base/typography";
+@import "../../../frontend/styles/base/utils";
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-green-light {
+    color: rgb(0, 170, 0);
+}
+
+body {
+    &[class*="scrolling-disabled"] {
+        max-height: 100vh;
+        overflow-y: hidden !important;
+        touch-action: none;
+    }
+}

@@ -1,0 +1,7 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+@import "vendor/index";
+@import "base/index";
+@import "inspinia/index"; // Responsive Admin Theme (version 2.7.1)
+@import "components/index"; // Custom styles

@@ -1,0 +1,107 @@
+import { makeStyles } from '@material-ui/core/styles';
+
+export default makeStyles(({ breakpoints, mixins }) => ({
+  root: {},
+  card: {
+    maxWidth: 712,
+    marginTop: 42,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    backgroundColor: '#fff',
+    borderRadius: '4px',
+    display: 'grid',
+    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.2)',
+    paddingTop: '34px',
+    [breakpoints.down('sm')]: {
+      maxWidth: '100%',
+      marginTop: 0,
+      height: 'auto',
+      gridGap: '10px',
+      borderRadius: '0',
+      borderBottom: '1px solid #E0E0E0',
+      paddingTop: '14px',
+    },
+  },
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    padding: '0 14px 14px',
+  },
+  checkmarkIcon: {
+    marginBottom: '10px',
+    marginTop: '10px',
+    [breakpoints.down('sm')]: {
+      width: '32px',
+      height: '32px',
+      marginBottom: '8px',
+    },
+  },
+  title: {
+    ...mixins.font(28, 39, 700),
+    color: '#333333',
+    textAlign: 'center',
+    paddingLeft: '24px',
+    paddingRight: '24px',
+    [breakpoints.down('sm')]: {
+      ...mixins.font(20, 32),
+      marginBottom: '6px',
+    },
+  },
+  desc: {
+    ...mixins.font(16, 24),
+    fontWeight: '400',
+    color: '#828282',
+    textAlign: 'center',
+    marginTop: '4px',
+    maxWidth: '580px',
+    paddingLeft: '24px',
+    paddingRight: '24px',
+    marginBottom: '10px',
+    [breakpoints.down('sm')]: {
+      ...mixins.font(14, 20),
+    },
+  },
+  actions: {
+    width: '100%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: '14px',
+    display: 'flex',
+    padding: '16px 14px 8px',
+    borderRadius: '6px',
+    backgroundColor: '#F1F1F8',
+    minHeight: '214px',
+    [breakpoints.down('sm')]: {
+      marginTop: '0',
+    },
+    [breakpoints.down('xs')]: {
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+    },
+  },
+  facebookPromo: {
+    display: 'flex',
+    width: '100%',
+    alignItems: 'center',
+    paddingLeft: 22,
+    paddingRight: 22,
+    fontSize: 16,
+    justifyContent: 'space-between',
+    [breakpoints.down('sm')]: {
+      textAlign: 'center',
+      flexDirection: 'column',
+      gap: 20,
+      padding: [[10, 0]],
+    },
+  },
+  followUsOnFacebookSection: {
+    maxWidth: 230,
+  },
+  facebookCta: {
+    marginTop: 18,
+    maxWidth: 230,
+  },
+}));

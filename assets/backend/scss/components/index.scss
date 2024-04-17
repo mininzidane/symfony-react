@@ -1,0 +1,45 @@
+@import "custom";
+@import "fee-calculator";
+@import "tickbox";
+@import "wire-confirmation-list";
+@import "phone-input-flat";
+@import "keyframes";
+@import "spinner-wheel";
+@import "bank-feed";
+@import "../../../frontend/styles/components/popups/tooltip";
+@import "../../../frontend/styles/components/form/plane";
+@import "../../../frontend/styles/components/form/radio-button";
+@import "./uploaded-document-card";
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.input-plane {
+  &.is-places {
+    border-radius: 0;
+    height: 34px;
+    input {
+      color: #555555;
+    }
+    &:hover {
+      border-color: #B7B5B3;
+    }
+    & img {
+      top: 4px;
+      right: 5px;
+    }
+  }
+  &.is-focused {
+    border-color: #1ab394!important;
+  }
+  input {
+    border: 0;
+  }
+}
+
+.table.table-statistic {
+  .grey-bg {
+    background-color: #f5f5f5;
+  }
+}

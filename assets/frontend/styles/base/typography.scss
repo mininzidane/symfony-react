@@ -1,0 +1,50 @@
+.text-xxl { @include font(32px, 48px) }
+.text-xl { @include font(24px, 32px) }
+.text-lg { @include font(20px, 27px) }
+.text-ml { @include font(18px, 24px) }
+.text-md { @include font(16px, 21px) }
+.text-sm { @include font(14px, 19px) }
+.text-xs { @include font(12px, 17px) }
+.text-0  { font-size: 0 !important; }
+.lh-1 { line-height: 1; }
+.fw-7 { font-weight: 700 !important }
+.fw-4 { font-weight: 400 !important }
+.fw-3 { font-weight: 300 !important }
+.fs-n { font-style: normal; }
+.fs-i { font-style: italic; }
+.ta-c { text-align: center !important }
+.ta-l { text-align: left !important }
+.ta-r { text-align: right !important }
+.tt-u { text-transform: uppercase !important }
+.tt-l { text-transform: lowercase !important }
+.tt-c { text-transform: capitalize !important }
+.tt-n { text-transform: none !important }
+.td-n { text-decoration: none !important }
+.td-lt { text-decoration: line-through !important }
+.td-u { text-decoration: underline !important }
+.td-n:hover .td-u-h { text-decoration: underline !important }
+.ws-n { white-space: nowrap !important }
+.ws-i { white-space: initial !important }
+@include breakpoint($xxs-up) { .xxs-up-ws-n { white-space: nowrap !important } }
+.to-e, .ellips { @include ellipsis }
+.lis-n { list-style: none; }
+.list-reset { list-style: none; margin: 0; padding: 0; }
+.clean-list-wrap ul { padding-left: 15px; margin: 0; }
+.clean-list-wrap ul > li:not(:first-child) { margin-top: 0.75em; }
+
+@each $bpName, $bpValue in $breakpoints-map {
+  @include breakpoint(max-width $bpValue) {
+    .#{$bpName}-text-xs { @include font(12px, 17px); }
+    .#{$bpName}-text-sm { @include font(14px, 19px); }
+    .#{$bpName}-text-md { @include font(16px, 21px); }
+    .#{$bpName}-text-ml { @include font(18px, 24px); }
+    .#{$bpName}-text-lg { @include font(20px, 27px); }
+    .#{$bpName}-text-xl { @include font(24px, 32px); }
+    .#{$bpName}-text-sup { position: relative; top: -.5em; font-size: .75em; }
+    .#{$bpName}-ta-l { text-align: left !important }
+    .#{$bpName}-ta-r { text-align: right !important }
+    .#{$bpName}-ta-c { text-align: center !important }
+    .#{$bpName}-fs-xs { font-size: 12px !important }
+  }
+}
+

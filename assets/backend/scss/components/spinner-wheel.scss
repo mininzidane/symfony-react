@@ -1,0 +1,52 @@
+.spinner-wheel {
+  position: relative;
+  border-style: solid;
+  display: inline-block;
+  flex-shrink: 0;
+  margin: 0;
+  font-size: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+  animation: Spin 650ms infinite linear;
+
+
+  // Colors
+  &.is-blue {
+    border-color: color('blue');
+    border-left-color: color('blue', .4);
+  }
+
+  &.is-white {
+    border-color: color("white");
+    border-left-color: color("white", 0.4);
+  }
+
+
+  &.is-gray {
+    border-color: #ccc;
+    border-left-color: #e8e8e8;
+  }
+
+
+  &.is-gray-dark {
+    border-color: #6a6a6a;
+    border-left-color: #ccc;
+  }
+
+
+  &.is-black {
+    border-color: color("black");
+    border-left-color: color("black", 0.4);
+  }
+
+  &.is-yellow {
+    border-color: #E6CD4F;
+    border-left-color: #F4EAB5;
+  }
+
+  // Position
+  &.is-centered {
+    @include absolute(50%, null, null, 50%);
+  }
+}
